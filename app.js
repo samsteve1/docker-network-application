@@ -68,7 +68,7 @@ app.get('/people', async (req, res) => {
 });
 
 mongoose.connect(
-  'mongodb://localhost:27017/swfavorites',
+  'mongodb://host.docker.internal:27017/swfavorites',
   { useNewUrlParser: true },
   (err) => {
     if (err) {
@@ -78,3 +78,6 @@ mongoose.connect(
     }
   }
 );
+
+// 'mongodb://host.docker.internal:27017/swfavorites', localhost
+// 'mongodb://container_name:27017/swfavorites', using the same network
